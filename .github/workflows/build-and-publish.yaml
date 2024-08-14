@@ -34,7 +34,7 @@ jobs:
         run: python3 -m build
 
       - name: Store the distribution packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
@@ -55,7 +55,7 @@ jobs:
 #
 #    steps:
 #      - name: Download all the dists
-#        uses: actions/download-artifact@v3
+#        uses: actions/download-artifact@v4
 #        with:
 #          name: python-package-distributions
 #          path: dist/
@@ -78,7 +78,7 @@ jobs:
 
     steps:
       - name: Download all the dists
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
@@ -102,7 +102,7 @@ jobs:
 
     steps:
       - name: Download all the dists
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
@@ -130,7 +130,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: >-
           gh release create
-          '${{ env.package_name }}-v${{ env.package_version }}'
+          '${{ env.package_name }}-${{ env.package_version }}'
           --repo '${{ github.repository }}'
           --notes ""
 
@@ -142,5 +142,5 @@ jobs:
         # sigstore-produced signatures and certificates.
         run: >-
           gh release upload
-          '${{ env.package_name }}-v${{ env.package_version }}' dist/**
+          '${{ env.package_name }}-${{ env.package_version }}' dist/**
           --repo '${{ github.repository }}'
