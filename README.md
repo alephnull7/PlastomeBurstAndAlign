@@ -12,7 +12,7 @@ apt install python3-coloredlogs
 ```
 
 ### Overview of process
-![Depiction of plastomes being split according to specified feature type; these features and then aligned by region](docs/PlastomeBurstAndAlign_ProcessOverview.png)
+![Depiction of plastomes being split according to specified feature type; these features are then aligned by region](docs/PlastomeBurstAndAlign_ProcessOverview.png)
 
 ### Main features
 - Extracts all genes, introns, or intergenic spacers from a set of plastid genomes in GenBank flatfile format, aligns the corresponding regions, and then saves the alignments
